@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-05-2023 a las 15:15:56
+-- Tiempo de generación: 28-05-2023 a las 06:39:30
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -42,13 +42,15 @@ CREATE TABLE `alumno` (
 
 INSERT INTO `alumno` (`idAlumno`, `dni`, `apellido`, `nombre`, `fechaNac`, `activo`) VALUES
 (1, 2330123, 'Aguilar ', 'Emmanuel', '2023-05-11', 0),
-(3, 2421321, 'castillo ', 'adrian', '2023-05-01', 1),
+(3, 2421321, 'castillo ', 'adrian', '1800-04-30', 0),
 (4, 2157654, 'celestino ', 'urgencio', '2023-04-11', 1),
-(7, 1234, 'romualdo', 'funesios', '1600-03-19', 1),
+(7, 1716, 'romualdo', 'funesios', '1600-03-19', 1),
 (9, 1515, 'Fulana', 'Gala', '1987-12-25', 1),
-(10, 1616, 'Villegas', 'Rocio', '1975-06-10', 0),
+(10, 1616, 'Villegas', 'Rocio', '1975-06-10', 1),
 (11, 1717, 'Gonzalez', 'Ramon', '1967-08-01', 1),
-(12, 1818, 'Romualdo', 'Funesio', '1967-08-01', 1);
+(12, 1818, 'Romualdo', 'Funesio', '1967-08-01', 1),
+(17, 2525, 'Alcaraz', 'rodrigo', '1995-07-24', 1),
+(19, 3250, 'probando', 'fasdas', '2023-05-03', 1);
 
 -- --------------------------------------------------------
 
@@ -57,7 +59,7 @@ INSERT INTO `alumno` (`idAlumno`, `dni`, `apellido`, `nombre`, `fechaNac`, `acti
 --
 
 CREATE TABLE `inscripcion` (
-  `idInscripto` int(11) NOT NULL,
+  `idInscripcion` int(11) NOT NULL,
   `idMateria` int(11) NOT NULL,
   `idAlumno` int(11) NOT NULL,
   `nota` double NOT NULL
@@ -67,13 +69,23 @@ CREATE TABLE `inscripcion` (
 -- Volcado de datos para la tabla `inscripcion`
 --
 
-INSERT INTO `inscripcion` (`idInscripto`, `idMateria`, `idAlumno`, `nota`) VALUES
+INSERT INTO `inscripcion` (`idInscripcion`, `idMateria`, `idAlumno`, `nota`) VALUES
 (1, 1, 1, 0),
 (2, 2, 1, 0),
-(3, 3, 3, 0),
-(4, 5, 3, 0),
-(5, 3, 4, 0),
-(7, 2, 4, 0);
+(3, 3, 3, 7.45),
+(4, 5, 3, 2.25),
+(5, 3, 4, 2),
+(7, 2, 4, 4.7),
+(15, 7, 19, 5),
+(16, 2, 19, 10),
+(17, 2, 17, 10),
+(18, 1, 17, 7),
+(19, 5, 17, 8),
+(20, 7, 11, 0),
+(21, 2, 11, 0),
+(22, 4, 12, 2),
+(23, 19, 12, 10),
+(24, 2, 12, 5.25);
 
 -- --------------------------------------------------------
 
@@ -99,7 +111,8 @@ INSERT INTO `materia` (`idMateria`, `nombre`, `añoMateria`, `activo`) VALUES
 (4, 'INGLES', 2023, 1),
 (5, 'WEB1', 2023, 1),
 (7, 'm2', 2013, 1),
-(9, 'Lengua', 3, 0);
+(9, 'Lengua', 3, 0),
+(19, 'PruebaM', 2, 1);
 
 --
 -- Índices para tablas volcadas
@@ -116,7 +129,7 @@ ALTER TABLE `alumno`
 -- Indices de la tabla `inscripcion`
 --
 ALTER TABLE `inscripcion`
-  ADD PRIMARY KEY (`idInscripto`,`idAlumno`,`idMateria`),
+  ADD PRIMARY KEY (`idInscripcion`,`idAlumno`,`idMateria`),
   ADD KEY `idAlumno` (`idAlumno`),
   ADD KEY `idMateria` (`idMateria`);
 
@@ -135,19 +148,19 @@ ALTER TABLE `materia`
 -- AUTO_INCREMENT de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-  MODIFY `idAlumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `idAlumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `inscripcion`
 --
 ALTER TABLE `inscripcion`
-  MODIFY `idInscripto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idInscripcion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `materia`
 --
 ALTER TABLE `materia`
-  MODIFY `idMateria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idMateria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Restricciones para tablas volcadas
@@ -157,8 +170,8 @@ ALTER TABLE `materia`
 -- Filtros para la tabla `inscripcion`
 --
 ALTER TABLE `inscripcion`
-  ADD CONSTRAINT `inscripcion_ibfk_1` FOREIGN KEY (`idalumno`) REFERENCES `alumno` (`idalumno`),
-  ADD CONSTRAINT `inscripcion_ibfk_2` FOREIGN KEY (`idmateria`) REFERENCES `materia` (`idmateria`);
+  ADD CONSTRAINT `inscripcion_ibfk_1` FOREIGN KEY (`idalumno`) REFERENCES `alumno` (`idAlumno`),
+  ADD CONSTRAINT `inscripcion_ibfk_2` FOREIGN KEY (`idmateria`) REFERENCES `materia` (`idMateria`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
