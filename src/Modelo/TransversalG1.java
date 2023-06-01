@@ -11,8 +11,8 @@ import java.util.List;
 public class TransversalG1 {
 
     public static void main(String[] args) throws SQLException {
-
-        Conexion con = new Conexion();
+        
+       /* Conexion con = new Conexion();
         AlumnoData ad = new AlumnoData(con);
 
      
@@ -58,11 +58,9 @@ public class TransversalG1 {
             System.out.println(a.getFechaNac());
         }
    
-        
-
 
     ad.listarAlumnos().forEach(alumno->{System.out.println(alumno);});
-   
+   */
     }
 
 }

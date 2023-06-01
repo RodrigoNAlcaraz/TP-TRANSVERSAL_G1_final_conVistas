@@ -67,7 +67,7 @@ public class AlumnoData {
                 alumno.setApellido(rs.getString("apellido"));
                 alumno.setNombre(rs.getString("nombre"));
                 alumno.setFechaNac(rs.getDate("fechaNac").toLocalDate());
-                //alumno.setActivo(rs.getBoolean("activo"));
+                alumno.setActivo(rs.getBoolean("activo"));
 
                 
             } else {
