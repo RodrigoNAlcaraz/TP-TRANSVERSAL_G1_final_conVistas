@@ -130,7 +130,7 @@ public class MateriaData {
                 materias.add(materia);
             }
             ps.close();
-            JOptionPane.showMessageDialog(null, "Lista entregada con exito.");
+            //JOptionPane.showMessageDialog(null, "Lista entregada con exito.");
 
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, " La lista no fue entregada."+ex.getMessage());

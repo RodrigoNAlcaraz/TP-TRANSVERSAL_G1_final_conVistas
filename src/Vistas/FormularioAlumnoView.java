@@ -227,8 +227,7 @@ public class FormularioAlumnoView extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuscarActionPerformed
-        // TODO add your handling code here:
-        //Conexion con = new Conexion();
+   
         
         Integer id = 0;
         try {
@@ -239,7 +238,7 @@ public class FormularioAlumnoView extends javax.swing.JInternalFrame {
         }
        
         
-        //Alumno alumno = new AlumnoData(con).buscarAlumno(id);
+      
         Alumno alumno = new Alumno();
         alumno=ad.buscarAlumno(id);
         
@@ -262,10 +261,7 @@ public class FormularioAlumnoView extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_buttonBuscarActionPerformed
 
     private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
-        // TODO add your handling code here:
-       // Conexion con = new Conexion();
-        //AlumnoData ad = new AlumnoData(con);
-
+     
         Integer id = Integer.parseInt(txtLegajo.getText());
 
         if (radBtnEstadoAlum.isSelected()) {
@@ -278,10 +274,7 @@ public class FormularioAlumnoView extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnBorrarActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-        // TODO add your handling code here:
-       // Conexion con = new Conexion();
-        //AlumnoData ad = new AlumnoData(con);
-
+    
         Integer id = Integer.parseInt(txtLegajo.getText());
         int dni = Integer.parseInt(txtDni.getText());
         String nombre = txtNombre.getText();
@@ -299,10 +292,7 @@ public class FormularioAlumnoView extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        // TODO add your handling code here:
-        //Conexion con = new Conexion();
-       // AlumnoData ad = new AlumnoData(con);
-        
+                
        try{ 
         int dni = Integer.parseInt(txtDni.getText());
         String nombre = txtNombre.getText();

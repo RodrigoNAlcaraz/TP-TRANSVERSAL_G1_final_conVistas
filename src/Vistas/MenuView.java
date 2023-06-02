@@ -23,7 +23,7 @@ public class MenuView extends javax.swing.JFrame {
     public MenuView() {
         initComponents();
         this.setLocationRelativeTo(null);
-        //this.setSize(500, 520);
+       
     }
 
     @SuppressWarnings("unchecked")
@@ -151,7 +151,7 @@ public class MenuView extends javax.swing.JFrame {
         escritorio.repaint();
         FormularioAlumnoView alumno = new FormularioAlumnoView(alumData);
         alumno.setVisible(true);
-        // alumno.getContentPane().setBackground(new Color(68, 167, 132));
+        alumno.getContentPane().setBackground(new Color(130, 200, 240));
         escritorio.add(alumno);
     }//GEN-LAST:event_menuItmAlumnosActionPerformed
 
@@ -166,7 +166,7 @@ public class MenuView extends javax.swing.JFrame {
         escritorio.repaint();
         FormularioNotas notas = new FormularioNotas(alumData, insData);
         notas.setVisible(true);
-        notas.getContentPane().setBackground(new Color(68, 167, 132));
+        notas.getContentPane().setBackground(new Color(130, 200, 240));
         escritorio.add(notas);
     }//GEN-LAST:event_menuItmNotasActionPerformed
 
@@ -176,7 +176,7 @@ public class MenuView extends javax.swing.JFrame {
         escritorio.repaint();
         FormularioMateria materia = new FormularioMateria(matData);
         materia.setVisible(true);
-        materia.getContentPane().setBackground(new Color(68, 167, 132));
+        materia.getContentPane().setBackground(new Color(130, 200, 240));
         escritorio.add(materia);
     }//GEN-LAST:event_menuItmMateriasActionPerformed
 
@@ -186,7 +186,7 @@ public class MenuView extends javax.swing.JFrame {
         escritorio.repaint();
         FormularioInscripcion ins = new FormularioInscripcion(alumData, matData, insData);
         ins.setVisible(true);
-        ins.getContentPane().setBackground(new Color(68, 167, 132));
+        ins.getContentPane().setBackground(new Color(130, 200, 240));
         escritorio.add(ins);
     }//GEN-LAST:event_menuItmInscripcionesActionPerformed
 
@@ -196,7 +196,7 @@ public class MenuView extends javax.swing.JFrame {
         escritorio.repaint();
         FormularioAlumnosPorMateria notas = new FormularioAlumnosPorMateria(matData, insData);
         notas.setVisible(true);
-        notas.getContentPane().setBackground(new Color(68, 167, 132));
+        notas.getContentPane().setBackground(new Color(130, 200, 240));
         escritorio.add(notas);
 
     }//GEN-LAST:event_menuItmAlumPMateriaActionPerformed
